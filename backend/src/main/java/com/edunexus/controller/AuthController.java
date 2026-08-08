@@ -5,7 +5,7 @@ import com.edunexus.dto.AuthenticationResponse;
 import com.edunexus.dto.RegisterRequest;
 import com.edunexus.model.User;
 import com.edunexus.repository.UserRepository;
-import com.edunexus.service.JwtService;
+import com.edunexus.security.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:3000")
 public class AuthController {
 
     private final UserRepository userRepository;

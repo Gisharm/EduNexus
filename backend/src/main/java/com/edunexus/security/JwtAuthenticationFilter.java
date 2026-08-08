@@ -1,6 +1,6 @@
 package com.edunexus.security;
 
-import com.edunexus.service.JwtService;
+import com.edunexus.security.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
