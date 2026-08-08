@@ -1,22 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {
   Box,
   Typography,
-  Grid,
-  Card,
-  CardContent,
   List,
   ListItem,
   ListItemText,
   ListItemIcon,
-  Divider,
   Button,
   Tabs,
   Tab,
   Paper,
-  Chip,
   CircularProgress,
 } from '@mui/material';
 import {
@@ -31,31 +26,8 @@ import { RootState } from '../store';
 import { Course } from '../types';
 import axiosInstance from '../utils/axios';
 
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`course-tabpanel-${index}`}
-      aria-labelledby={`course-tab-${index}`}
-      {...other}
-    >
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
-    </div>
-  );
-}
-
 const CourseDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
   const { user } = useSelector((state: RootState) => state.auth);
   const [course, setCourse] = useState<Course | null>(null);
   const [loading, setLoading] = useState(true);

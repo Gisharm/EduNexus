@@ -13,7 +13,6 @@ import {
     ListItemText,
     Toolbar,
     Typography,
-    useTheme,
     Avatar,
     Menu,
     MenuItem,
@@ -31,7 +30,6 @@ import { logout } from '../store/slices/authSlice';
 const drawerWidth = 240;
 
 const Layout: React.FC = () => {
-    const theme = useTheme();
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { user } = useSelector((state: RootState) => state.auth);
@@ -101,7 +99,7 @@ const Layout: React.FC = () => {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-                        EduNexus
+                        Skylearn
                     </Typography>
                     <IconButton
                         onClick={handleMenu}
